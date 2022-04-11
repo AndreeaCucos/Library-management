@@ -1,0 +1,34 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;width:350px;">
+        <h1> Produse</h1>
+        <br>
+        <form method = "post" style="color:white;">
+            <button class="button" type="submit" name="change" value="Update produs" >Update produs</button>
+        </form>
+        <br>
+        <form method = "post" style="color:white;">
+            <button class="button" type="submit" name="change" value="Delete produs" >Delete produs</button>
+        </form>
+        <br>
+        <form method = "post" style="color:white;">
+            <button class="button"  type="submit" name="change" value="undo">Undo</button>
+        </form>
+        <br>
+        {%for product in products%}
+            {% for furnizor in furnizori %}
+                {% if product['furnizor_id'] == furnizor['furnizor_id'] %}
+                    <br>
+                    <hr>
+                    <br>
+                    <h2>{{product['produs_id']}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{product['nume_produs']}}</h2>
+                    <p style="font-size: 20px;"> Detalii produs:</p>
+                    <p style="font-size: 20px;">Preț:&nbsp;{{product['pret']}}&nbsp;lei&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stoc:&nbsp;{{product['cantitate_disponibila']}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furnizor:&nbsp;{{furnizor['nume_furnizor']}}</p>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</center>
+{% endblock %}

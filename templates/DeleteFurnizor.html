@@ -1,0 +1,20 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;">
+        <h1> Stergeți furnizor</h1>
+        <form method = "post">
+            <p style="font-size:22px;">Furnizor:</p>
+                <select name="furnizor">
+                    {%for furnizor in furnizori%}
+                        <option>{{furnizor['furnizor_id'], furnizor['nume_furnizor']}}</option>
+                    {%endfor%}
+                </select>
+            <br>
+            <br>
+            <button class="button" type="submit" name="change" value="Delete">Delete</button>
+        </form>
+    </div>
+</center>
+{% endblock %}

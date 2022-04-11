@@ -1,0 +1,22 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;">
+        <form method = "post">
+            <button class="button" style="float:left" type="submit" name="emp" value="undo"> Undo</button>
+            <br>
+            <br>
+            <br>
+            <h1> Angajați</h1>
+            <br>
+            <br>
+            {%for angajat in angajati%}
+                <button class="button" style="border-radius: 50%;padding: 12px;display: inline-block;" type="submit" name="emp" value={{angajat['angajat_id']}}> {{angajat['angajat_id']}}</button>
+                <h2 style="display: inline-block;">&nbsp;&nbsp;{{angajat['nume_angajat']}}</h2>
+            <br>
+            {% endfor %}
+            </form>
+    </div>
+</center>
+{% endblock %}

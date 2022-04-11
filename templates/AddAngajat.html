@@ -1,0 +1,31 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+    <center>
+        <div class="back" style="color:black;">
+            <h1 style="color:black;">Adăugți angajat nou</h1>
+            <form method = "post">
+                <div class="column" >
+                    <p style="font-size:23px;">Nume angajat:</p>
+                    <p><input type = "text" name = "nume" /></p>
+                    <br>
+                    <p style="font-size:23px;">CNP:</p>
+                    <p><input type = "text" name = "cnp" /></p>
+                    <br>
+                </div>
+                <div class="column" >
+                    <p style="font-size:23px;">Adresă:</p>
+                    <p><input type = "text" name = "adresa" /></p>
+                    <br>
+                    <p style="font-size:23px;">Telefon:</p>
+                    <p><input type = "text" name = "telefon" /></p>
+                    <br>
+                    <p style="font-size:23px;">Email:</p>
+                    <p><input type = "text" name = "email" /></p>
+                    <br>
+                </div>
+                <button class="button" type = "submit" name = "submit" value = "add" >Add</button>
+            </form>
+        </div>
+    </center>
+{% endblock %}

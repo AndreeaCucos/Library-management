@@ -1,0 +1,29 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;width:700px;">
+    <h1> Informații clienți</h1>
+        <br>
+        <br>
+    {%for client in clienti%}
+        {% for i in info %}
+            {% if client['client_id'] == i['id'] %}
+            <hr>
+            <br>
+            <h2 style="font-size:20px;display: inline-block;">{{client['client_id']}}.</h2>
+                <p style="text-indent :0.5em;font-size: 20px;display: inline-block;"><b>{{client['nume_client']}}</b></p>
+                <p style="font-size: 20px;">CNP: {{client['cnp_client']}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vârstă: {{i['age']}} ani</p>
+                <p style="font-size: 20px;">Număr card: {{client['nr_card']}} </p>
+                {% if client['card_fidelitate'] == None %}
+                    <p style="font-size: 20px;"><i>Deține card de fidelitate</i></p>
+                {% endif %}
+                <p style="font-size: 20px;">Telefon: {{client['telefon']}}</p>
+                <p style="font-size: 20px;">Adresă: {{client['adresa']}}</p>
+                <br>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </div>
+</center>
+{% endblock %}

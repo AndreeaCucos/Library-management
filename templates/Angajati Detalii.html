@@ -1,0 +1,22 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;">
+        <h1> Informații personal </h1>
+        <p style="font-size: 20px;">CNP: {{details['cnp_angajat']}}</p>
+        <p style="font-size: 20px;">Adresă: {{details['adresa']}}</p>
+        <p style="font-size: 20px;">Telefon: {{details['telefon']}}</p>
+        <p style="font-size: 20px;">Email: {{details['email']}}</p>
+        <p style="font-size: 20px;">Vârstă: {{age}} ani</p>
+        <form method = "post" style="color:white;">
+            <button class="button" type="submit" name="change" value="Update {{emp_id}}" >Update detalii</button>
+        </form>
+        <br>
+        <form method = "post" style="color:white;">
+            <button class="button" type="submit" name="change" value="Delete {{emp_id}}">Delete angajat</button>
+        </form>
+    </div>
+</center>
+
+{% endblock %}

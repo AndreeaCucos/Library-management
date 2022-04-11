@@ -1,0 +1,43 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+<div class="back">
+    <h1 style="color:black;"> Vânzare </h1>
+        <form method = "post" style="color:black;">
+             <div class="column">
+                <p style="font-size:21px;">Dată:</p>
+                <p><input type = "text" name = "dt" /></p>
+                <br>
+                <p style="font-size:21px;">ID angajat:</p>
+                <select name="id_emp">
+                    {%for angajat in angajati%}
+                    <option>{{angajat['angajat_id']}}, {{angajat['nume_angajat']}}</option>
+                    {%endfor%}
+                </select>
+                <br>
+                <p style="font-size:21px;">Nume client:</p>
+                <p><input type = "text" name = "nume" /></p>
+                <br>
+                <p style="font-size:21px;">CNP:</p>
+                <p><input type = "text" name = "cnp" /></p>
+             </div>
+             <div class="column">
+                <p style="font-size:21px;">Număr card:</p>
+                <p><input type = "text" name = "card" /></p>
+                <br>
+                <p style="font-size:21px;">Telefon:</p>
+                <p><input type = "text" name = "telefon" /></p>
+                <br>
+                <p style="font-size:21px;">Adresă:</p>
+                <p><input type = "text" name = "adresa" /></p>
+                <br>
+                <p style="font-size:21px;">Card de fidelitate:</p>
+                <p><input type = "text" name = "card_f" /></p>
+                <br>
+             </div>
+            <button class="button" type = "submit" name = "submit" value = "Go to cart">Go to cart</button>
+        </form>
+    </div>
+    </center>
+{% endblock %}

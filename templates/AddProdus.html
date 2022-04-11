@@ -1,0 +1,32 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+    <center>
+        <div class="back" style="color:black;">
+            <h1>Adăugați produs nou</h1>
+            <form method = "post">
+                <p style="font-size:23px;">Nume produs:</p>
+                <p><input type = "text" name = "nume_produs" /></p>
+                <br>
+                <p style="font-size:23px;">Preț:</p>
+                <p><input type = "text" name = "pret" /></p>
+                <br>
+                <p style="font-size:23px;">Stoc:</p>
+                <p><input type = "text" name = "cantitate" /></p>
+                <br>
+                <p style="font-size:23px;">ID furnizor:</p>
+                <select name="id_furn">
+                    {%for furnizor in furnizori%}
+                        <option>{{furnizor['furnizor_id']}}, {{furnizor['nume_furnizor']}}</option>
+                    {%endfor%}
+                </select>
+                <br>
+                <br>
+                <br>
+                <button class="button" type = "submit" name = "submit" value = "add">Add</button>
+            </form>
+        </div>
+    </center>
+
+
+{% endblock %}

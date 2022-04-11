@@ -1,0 +1,23 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+     <div class="back" style="color:black;width:300px;">
+       <form method = "post">
+           <p style="font-size:25px;">Produs:</p>
+               <select name="produs">
+                   {%for product in products%}
+                       <option>{{product['produs_id'], product['nume_produs']}}</option>
+                   {%endfor%}
+               </select>
+           <br>
+           <p style="font-size:25px;">Cantitate:</p>
+           <p><input type = "text" name = "cant" /></p>
+           <button class="button" type = "submit" name = "submit" value = "add">Add</button>
+           <br>
+           <br>
+           <button class="button" type = "submit" name = "submit" value = "pay">Pay</button>
+       </form>
+     </div>
+</center>
+{% endblock %}

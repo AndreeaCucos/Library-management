@@ -1,0 +1,21 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;width:300px;">
+        <h1>Istoric vânzări</h1>
+        <br>
+        <hr>
+        {% for vanzare in vanzari %}
+            <form method = "post">
+                <button class="button" type="submit" name="sale" value={{vanzare['nr_bon']}}>{{vanzare['nr_bon']}}</button>
+            </form>
+            <p style="font-size: 20px;">Dată: {{vanzare['data']}}</p>
+            <p style="font-size: 20px;">ID angajat: {{vanzare['angajat_id']}}</p>
+            <p style="font-size: 20px;">ID client: {{vanzare['client_id']}}</p>
+            <p style="font-size: 20px;">Număr card: {{vanzare['nr_card']}}</p>
+            <hr>
+        {% endfor %}
+    </div>
+</center>
+{% endblock %}

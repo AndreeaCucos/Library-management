@@ -1,0 +1,26 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;">
+        <h1> Actualizați informațiile furnizorului</h1>
+        <form method = "post">
+            <p style="font-size:20px">Produs</p>
+                <select name="produs">
+                    {%for product in products%}
+                        <option>{{product['produs_id'], product['nume_produs']}}</option>
+                    {%endfor%}
+                </select>
+            <p style="font-size:20px">Update:</p>
+            <select name="update" >
+                {%for type in types%}
+                    <option>{{type}}</option>
+                {%endfor%}
+            </select>
+            <p><input type = "text" name = "valoare" /></p>
+            <br>
+            <button class="button" type = "submit" name = "submit" value = "update" >Update</button>
+        </form>
+    </div>
+</center>
+{% endblock %}

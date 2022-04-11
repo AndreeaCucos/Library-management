@@ -1,0 +1,20 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;width:300px;">
+        <h1> Undo </h1>
+        <form method = "post">
+                <select name="change">
+                    {%for type in types%}
+                    <option>{{type}}</option>
+                    {%endfor%}
+                </select>
+            <br>
+            <br>
+            <button class="button" type = "submit" name = "submit" value = "undo">Undo</button>
+        </form>
+
+    </div>
+</center>
+{% endblock %}

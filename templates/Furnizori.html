@@ -1,0 +1,30 @@
+{% extends 'Home.html' %}
+
+{% block content %}
+<center>
+    <div class="back" style="color:black;width:300px;">
+        <h1> Furnizori </h1>
+        <form method = "post" style="color:white;">
+            <button class="button" type="submit" name="change" value="Update furnizor " >Update</button>
+        </form>
+        <br>
+        <form method = "post" style="color:white;">
+            <button class="button"  type="submit" name="change" value="Delete furnizor">Delete</button>
+        </form>
+        <br>
+        <form method = "post" style="color:white;">
+            <button class="button"  type="submit" name="change" value="Undo">Undo</button>
+        </form>
+        {%for furnizor in furnizori%}
+            <br>
+            <hr>
+            <br>
+            <h2 style="font-size: 25px;">{{furnizor['furnizor_id']}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{furnizor['nume_furnizor']}}</h2>
+            <p style="font-size: 20px;">Adresă: {{furnizor['adresa']}}</p>
+            <p style="font-size: 20px;">Email : {{furnizor['email']}}</p>
+            <br>
+        {% endfor %}
+        <br>
+    </div>
+</center>
+{% endblock %}
