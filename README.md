@@ -1,2 +1,2 @@
-# Gestiunea-unei-librarii
-Analiza, proiectarea și implementarea unei baze de date și a aplicației aferente care modelează activitatea unei librării în ceea ce privește gestiunea produselor și a achizițiilor realizate de clienți.
+# Library management
+Analyzing, designing, and implementing a database and the corresponding application that models the operations of a library concerning product management and customer acquisitions.
